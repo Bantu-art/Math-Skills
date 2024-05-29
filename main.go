@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+
+	"math-skills/math"
 )
 
 func main() {
@@ -29,7 +31,7 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 
-		if line == ""{
+		if line == "" {
 			continue
 		}
 		num, err := strconv.ParseFloat(line, 64)
@@ -44,4 +46,6 @@ func main() {
 		return
 	}
 	fmt.Println("Numbers parsed successfully:", numbers)
+
+	fmt.Println(math.Mean(numbers))
 }
