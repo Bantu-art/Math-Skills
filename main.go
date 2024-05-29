@@ -28,7 +28,11 @@ func main() {
 
 	for scanner.Scan() {
 		line := scanner.Text()
-		num, err := strconv.ParseFloat(line, 64) 
+
+		if line == ""{
+			continue
+		}
+		num, err := strconv.ParseFloat(line, 64)
 		if err != nil {
 			fmt.Println("Error: invalid number in file:", line)
 			return
@@ -40,5 +44,4 @@ func main() {
 		return
 	}
 	fmt.Println("Numbers parsed successfully:", numbers)
-
 }
