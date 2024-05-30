@@ -27,8 +27,10 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 	var numbers []float64
+	lineNumber := 0
 
 	for scanner.Scan() {
+		lineNumber++
 		line := scanner.Text()
 
 		if line == "" {
@@ -36,11 +38,15 @@ func main() {
 		}
 		num, err := strconv.ParseFloat(line, 64)
 		if err != nil {
-			fmt.Println("Error: invalid number in file:", line)
+			fmt.Printf("Error: invalid number in your file at line %d: %s\n",lineNumber, line)
 			return
 		}
 		numbers = append(numbers, num)
 	}
+	if err := scanner.Err(); err != nil {
+        fmt.Println("Error reading file:", err)
+        return
+    }
 	if len(numbers) == 0 {
 		fmt.Println("Error: the file is empty or contains no valid numbers")
 		return
