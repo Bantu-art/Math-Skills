@@ -45,7 +45,10 @@ func main() {
 		fmt.Println("Error: the file is empty or contains no valid numbers")
 		return
 	}
-	fmt.Println("Numbers parsed successfully:", numbers)
+	// fmt.Println("Numbers parsed successfully:", numbers)
 
-	fmt.Println(math.Mean(numbers))
+	Average := math.Mean(numbers)
+	Median := math.Median(numbers)
+	fmt.Println("Average:", Average)
+	fmt.Println("Median:", Median)
 }
