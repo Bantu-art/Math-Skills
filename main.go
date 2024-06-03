@@ -38,7 +38,7 @@ func main() {
 		}
 		num, err := strconv.ParseFloat(line, 64)
 		if err != nil {
-			fmt.Printf("Error: invalid number in your file at line %d: %s\n",lineNumber, line)
+			fmt.Printf("Error: invalid number in your file at line %d: %s\n", lineNumber, line)
 			return
 		}
 		numbers = append(numbers, num)
@@ -55,6 +55,11 @@ func main() {
 
 	Average := math.Mean(numbers)
 	Median := math.Median(numbers)
-	fmt.Println("Average:", Average)
-	fmt.Println("Median:", Median)
+	Variance := math.CalculateVariance(numbers)
+	Standard_Deviation := math.CalculateStandardDeviation(numbers)
+	fmt.Printf("Average: %.0f\n", Average)
+	fmt.Printf("Median: %.0f\n", Median)
+	fmt.Printf("Variance: %.0f\n", Variance)
+	fmt.Printf("Standard Deviation:%.0f\n", Standard_Deviation)
+
 }
