@@ -8,6 +8,7 @@ import (
 
 	"math-skills/math"
 )
+const MaxAllowedValue = 1e6 
 
 func main() {
 	arg := os.Args
@@ -40,6 +41,10 @@ func main() {
 		num, err := strconv.ParseFloat(line, 64)
 		if err != nil {
 			fmt.Printf("Error: invalid number in your file at line %d: %s\n", lineNumber, line)
+			return
+		}
+		if num > MaxAllowedValue {
+			fmt.Printf("Error: number too big in your file at line %d: %s\n", lineNumber, line)
 			return
 		}
 		numbers = append(numbers, num)
