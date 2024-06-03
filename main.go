@@ -30,9 +30,10 @@ func main() {
 	lineNumber := 0
 
 	for scanner.Scan() {
-		lineNumber++
 		line := scanner.Text()
+		lineNumber++
 
+			// Skip empty lines.
 		if line == "" {
 			continue
 		}
@@ -43,10 +44,12 @@ func main() {
 		}
 		numbers = append(numbers, num)
 	}
+	// Check for errors during scanning.
 	if err := scanner.Err(); err != nil {
 		fmt.Println("Error reading file:", err)
 		return
 	}
+
 	if len(numbers) == 0 {
 		fmt.Println("Error: the file is empty or contains no valid numbers")
 		return
