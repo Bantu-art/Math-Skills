@@ -48,7 +48,7 @@ This Go program reads a dataset of numbers from a file and calculates various st
     Variance: 138
     Standard Deviation:12
     ```
- 3. **Handling large numbers:**
+    3. **Handling large numbers:**
     ```
    The program limits the input data to avoid processing large numbers that may lead to inaccuracies in the variance and standard deviation calculations. Numbers exceeding `1e6` (1,000,000) will be considered too large, and the program will prompt the user to consider scaling down the data for accurate results.
    ```
