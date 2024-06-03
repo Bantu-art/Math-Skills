@@ -44,9 +44,9 @@ func main() {
 		numbers = append(numbers, num)
 	}
 	if err := scanner.Err(); err != nil {
-        fmt.Println("Error reading file:", err)
-        return
-    }
+		fmt.Println("Error reading file:", err)
+		return
+	}
 	if len(numbers) == 0 {
 		fmt.Println("Error: the file is empty or contains no valid numbers")
 		return
@@ -60,6 +60,5 @@ func main() {
 	fmt.Printf("Average: %.0f\n", Average)
 	fmt.Printf("Median: %.0f\n", Median)
 	fmt.Printf("Variance: %.0f\n", Variance)
-	fmt.Printf("Standard Deviation:%.0f\n", Standard_Deviation)
-
+	fmt.Printf("Standard Deviation: %.0f\n", Standard_Deviation)
 }
