@@ -6,9 +6,10 @@ import (
 	"os"
 	"strconv"
 
-	"math-skills/math"
+	"math-skills/maths"
 )
-const MaxAllowedValue = 1e6 
+
+const MaxAllowedValue = 8e9
 
 func main() {
 	arg := os.Args
@@ -34,7 +35,7 @@ func main() {
 		line := scanner.Text()
 		lineNumber++
 
-			// Skip empty lines.
+		// Skip empty lines.
 		if line == "" {
 			continue
 		}
@@ -61,10 +62,10 @@ func main() {
 	}
 	// fmt.Println("Numbers parsed successfully:", numbers)
 
-	Average := math.Mean(numbers)
-	Median := math.Median(numbers)
-	Variance := math.CalculateVariance(numbers)
-	Standard_Deviation := math.CalculateStandardDeviation(numbers)
+	Average := maths.Mean(numbers)
+	Median := maths.Median(numbers)
+	Variance := maths.CalculateVariance(numbers)
+	Standard_Deviation := maths.CalculateStandardDeviation(numbers)
 	fmt.Printf("Average: %.0f\n", Average)
 	fmt.Printf("Median: %.0f\n", Median)
 	fmt.Printf("Variance: %.0f\n", Variance)

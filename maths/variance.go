@@ -1,4 +1,4 @@
-package math
+package maths
 
 func CalculateVariance(nbr []float64) float64 {
 	if len(nbr) == 0 {

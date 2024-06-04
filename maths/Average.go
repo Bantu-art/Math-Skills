@@ -1,4 +1,4 @@
-package math
+package maths
 
 // Mean calculates the average of a slice of float64 numbers.
 func Mean(nbr []float64) float64 {
